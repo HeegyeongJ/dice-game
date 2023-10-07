@@ -1,0 +1,85 @@
+@import "reset.css";
+*{box-sizing: border-box;}
+body{
+    background: linear-gradient(to right, rgb(234, 246, 144), #b6e732);
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 80vh;
+    margin: 60px auto;
+    text-align: center;
+    
+}
+.player-box{
+    padding: 80px 60px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.player1{
+    width: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+.player2{
+    width: 50%;
+    background: rgba(255, 255, 255, 0.8);
+}
+h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.player-score{
+    font-size: 70px;
+    margin-bottom: 150px;
+}
+
+
+/* current-box */
+.current-box{
+    width: 150px;
+    padding: 20px 30px;
+    border-radius: 8px;
+
+    background-color: rgba(125, 255, 212, 0.855);
+}
+.current-title{
+    margin-bottom: 16px;
+}
+.current-score{
+    font-size: 30px;
+}
+
+/* btn */
+button{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 18px;
+}
+.btn__new-game{
+    top: 20%;
+}
+.btn__rolling{
+    top: 60%;
+}
+.btn__hold{
+    top: 70%;
+}
+
+/* img */
+.dice{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
