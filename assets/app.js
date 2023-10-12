@@ -4,6 +4,7 @@ const diceImg = document.querySelector('.dice');
 const playerBox = document.querySelectorAll('.player-box');
 const currentPlayer = document.querySelectorAll('.current-score');
 const playerScore = document.querySelectorAll('.player-score');
+const body = document.querySelector('body');
 let playingPlayerScore;
 let current;
 
@@ -12,6 +13,7 @@ let current;
 let rolledNum = 0;
 let currentNum = 0;
 let playerNum = 0;
+
 
 
 const toggleClass = () => {
@@ -53,7 +55,14 @@ const holding = () => {
     currentNum = current.innerText * 1;
     playerNum += currentNum;
     playingPlayerScore = document.querySelector('.player-score-plus');
-    playingPlayerScore.innerText = playerNum;
+  
+    if(playingPlayerScore.innerText*1 == 0){
+        playingPlayerScore.innerText = playerNum;
+    }else if(playingPlayerScore.innerText*1 > 0){
+        playingPlayerScore.innerText = playingPlayerScore.innerText*1 + playerNum;
+    }else if (playingPlayerScore.innerText*1 >= 50){
+        
+    }
     
     toggleClass();
 }

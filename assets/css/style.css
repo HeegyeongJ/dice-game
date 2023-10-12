@@ -3,6 +3,7 @@
 body{
     background: linear-gradient(to right, rgb(234, 246, 144), #b6e732);
 }
+
 main{
     display: flex;
     justify-content: space-between;
