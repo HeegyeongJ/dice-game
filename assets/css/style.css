@@ -13,18 +13,17 @@ main{
     
 }
 .player-box{
+    width: 50%;
     padding: 80px 60px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-}
-.player1{
-    width: 50%;
     background: rgba(255, 255, 255, 0.5);
 }
-.player2{
-    width: 50%;
+
+.current-player-bg{
     background: rgba(255, 255, 255, 0.8);
 }
 h1{
@@ -58,7 +57,7 @@ button{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px 20px;
+    padding: 15px 25px;
     border-radius: 10px;
     background: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
