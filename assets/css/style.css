@@ -83,3 +83,11 @@ button{
     width: 80px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+/* game over */
+.gameover{
+    width: 100vw;
+    height: 100vh;
+    font-size: 50px;
+    font-weight: 500;
+}
