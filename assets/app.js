@@ -56,11 +56,14 @@ function appStart() {
     const setNewGame = () => {
         player1Count = 0;
         player2Count = 0;
+        currentNum = 0;
         current.innerText = 0;
         for (let i = 0; i < playerScore.length; i++) {
             playerScore[i].innerText = 0;
         }
         gameoverDiv.remove();
+        btnRollDice.addEventListener('click', rollingDice);
+        btnHold.addEventListener('click', holding);
     }
 
     const rollingDice = () => {
