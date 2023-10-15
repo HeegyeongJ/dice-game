@@ -26,9 +26,9 @@ function appStart() {
     const displayGameover = () => {
         const body = document.querySelector('body');
         const div = document.createElement('div');
+        div.innerText = 'gameover';
         const gameoverDiv = body.appendChild(div);
         gameoverDiv.classList.add('.gameover');
-        div.innerText = 'gameover'
     }
     const gameOver = () => {
         btnRollDice.removeEventListener('click', rollingDice);
@@ -37,6 +37,7 @@ function appStart() {
     }
 
     const toggleClass = () => {
+        if (player1Count >= 50 || player2Count >= 50) return gameOver();
         currentNum = 0
         current.innerText = 0;
         for (let i = 0; i < currentPlayer.length; i++) {
@@ -60,6 +61,7 @@ function appStart() {
     }
 
     const rollingDice = () => {
+
         rolledNum = parseInt(Math.random() * 6 + 1);
         const diceImg = document.querySelector('.dice');
         diceImg.src = `assets/imgs/dice0${rolledNum}.png`
@@ -75,27 +77,20 @@ function appStart() {
             current.innerText = 0;
             toggleClass();
         }
-
     }
 
     const holding = () => {
+
         currentNum = current.innerText * 1;
         const playingPlayerScore = document.querySelector('.player-score-plus');
 
-        if (player1Count >= 50 || player2Count >= 50) {
-            gameOver();
-            return;
+        if (playingPlayerScore.dataset.player == 1) {
+            player1Count += currentNum;
+            playingPlayerScore.innerText = player1Count;
         } else {
-            if (playingPlayerScore.dataset.player == 1) {
-                player1Count += currentNum;
-                playingPlayerScore.innerText = player1Count;
-            } else {
-                player2Count += currentNum;
-                playingPlayerScore.innerText = player2Count;
-            }
+            player2Count += currentNum;
+            playingPlayerScore.innerText = player2Count;
         }
-
-
         toggleClass();
     }
 
