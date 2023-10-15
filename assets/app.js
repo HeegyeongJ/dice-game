@@ -20,16 +20,17 @@ function appStart() {
     const currentPlayer = document.querySelectorAll('.current-score');
     const playerScore = document.querySelectorAll('.player-score');
 
+    const body = document.querySelector('body');
+    const div = document.createElement('div');
+    const gameoverDiv = body.appendChild(div);
 
 
 
     const displayGameover = () => {
-        const body = document.querySelector('body');
-        const div = document.createElement('div');
-        div.innerText = 'gameover';
-        const gameoverDiv = body.appendChild(div);
-        gameoverDiv.classList.add('.gameover');
+        gameoverDiv.innerText = 'GAME OVER!!'
+        gameoverDiv.classList.add('gameover');
     }
+
     const gameOver = () => {
         btnRollDice.removeEventListener('click', rollingDice);
         btnHold.removeEventListener('click', holding);
@@ -55,9 +56,11 @@ function appStart() {
     const setNewGame = () => {
         player1Count = 0;
         player2Count = 0;
+        current.innerText = 0;
         for (let i = 0; i < playerScore.length; i++) {
             playerScore[i].innerText = 0;
         }
+        gameoverDiv.remove();
     }
 
     const rollingDice = () => {

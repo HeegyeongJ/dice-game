@@ -1,6 +1,7 @@
 @import "reset.css";
 *{box-sizing: border-box;}
 body{
+    position: relative;
     background: linear-gradient(to right, rgb(234, 246, 144), #b6e732);
 }
 
@@ -90,9 +91,13 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
     font-size: 50px;
     font-weight: 500;
+    color:red;
     background-color: #fff;
 }
